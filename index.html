@@ -127,34 +127,8 @@ for (let i = 0; i < 30; i++) {
   z-index:10;
   box-shadow:0 0 20px rgba(255,79,123,0.6);
 ">
-  🎵 Tap to play music
-</div>
-
-<!-- Music Player -->
-<div id="musicBtn" style="
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#ff4f7b;
-  color:white;
-  padding:12px 18px;
-  border-radius:30px;
-  font-size:14px;
-  cursor:pointer;
-  z-index:10;
-  box-shadow:0 0 20px rgba(255,79,123,0.6);
-">
-  🎵 Tap to play Me & You
-</div>
-
-<iframe
-  id="ytPlayer"
-  width="0"
-  height="0"
-  allow="autoplay; encrypted-media">
-</iframe>
-
-<script>
+  
+  <script>
 document.getElementById("musicBtn").addEventListener("click", function () {
   document.getElementById("ytPlayer").src =
     "https://www.youtube.com/embed/v49Kxlh6a98?autoplay=1&loop=1&playlist=v49Kxlh6a98";
@@ -242,8 +216,61 @@ function yes(){
   </div>`;
 }
 </script>
+<!-- Music Player (Brave-safe) -->
+<div id="musicBox" style="
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  background:white;
+  padding:12px 16px;
+  border-radius:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  font-size:14px;
+  z-index:50;
+  text-align:center;
+">
+  🎵 Me & You – Parekh & Singh<br>
+  <button onclick="showPlayer()" style="
+    margin-top:6px;
+    background:#ff4f7b;
+    color:white;
+    border:none;
+    border-radius:18px;
+    padding:8px 16px;
+    cursor:pointer;
+  ">
+    Tap to play ▶️
+  </button>
+</div>
+
+<div id="playerWrap" style="
+  display:none;
+  position:fixed;
+  bottom:90px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+">
+  <iframe
+    width="300"
+    height="170"
+    src=""
+    allow="autoplay; encrypted-media"
+    style="border-radius:12px;">
+  </iframe>
+</div>
+
+<script>
+function showPlayer() {
+  document.querySelector("#playerWrap iframe").src =
+    "https://www.youtube.com/embed/v49Kxlh6a98?autoplay=1";
+  document.getElementById("playerWrap").style.display = "block";
+}
+</script>
 
 </body>
 </html>
+
 
 
