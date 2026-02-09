@@ -130,16 +130,36 @@ for (let i = 0; i < 30; i++) {
   🎵 Tap to play music
 </div>
 
-<iframe id="player" width="0" height="0"
-src=""
-allow="autoplay"></iframe>
+<!-- Music Player -->
+<div id="musicBtn" style="
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff4f7b;
+  color:white;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:14px;
+  cursor:pointer;
+  z-index:10;
+  box-shadow:0 0 20px rgba(255,79,123,0.6);
+">
+  🎵 Tap to play Me & You
+</div>
+
+<iframe
+  id="ytPlayer"
+  width="0"
+  height="0"
+  allow="autoplay; encrypted-media">
+</iframe>
 
 <script>
-document.getElementById("musicBtn").onclick = () => {
-  document.getElementById("player").src =
-    "https://www.youtube.com/embed/2aN8r4zV9xE?autoplay=1&loop=1&playlist=2aN8r4zV9xE";
-  document.getElementById("musicBtn").innerText = "🎶 Playing Me & You";
-};
+document.getElementById("musicBtn").addEventListener("click", function () {
+  document.getElementById("ytPlayer").src =
+    "https://www.youtube.com/embed/v49Kxlh6a98?autoplay=1&loop=1&playlist=v49Kxlh6a98";
+  this.innerText = "🎶 Playing Me & You";
+});
 </script>
 
 
@@ -225,4 +245,5 @@ function yes(){
 
 </body>
 </html>
+
 
