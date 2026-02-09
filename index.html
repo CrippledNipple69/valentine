@@ -113,10 +113,35 @@ for (let i = 0; i < 30; i++) {
 }
 </script>
 
-<!-- Music -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/2aN8r4zV9xE?autoplay=1&mute=1&loop=1&playlist=2aN8r4zV9xE"
+<!-- Music Player -->
+<div id="musicBtn" style="
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#ff4f7b;
+  color:white;
+  padding:12px 18px;
+  border-radius:30px;
+  font-size:14px;
+  cursor:pointer;
+  z-index:10;
+  box-shadow:0 0 20px rgba(255,79,123,0.6);
+">
+  🎵 Tap to play music
+</div>
+
+<iframe id="player" width="0" height="0"
+src=""
 allow="autoplay"></iframe>
+
+<script>
+document.getElementById("musicBtn").onclick = () => {
+  document.getElementById("player").src =
+    "https://www.youtube.com/embed/2aN8r4zV9xE?autoplay=1&loop=1&playlist=2aN8r4zV9xE";
+  document.getElementById("musicBtn").innerText = "🎶 Playing Me & You";
+};
+</script>
+
 
 <!-- PAGE 1 -->
 <div class="card" id="p1">
@@ -200,3 +225,4 @@ function yes(){
 
 </body>
 </html>
+
