@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ananya 🤍</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffd6e8, #fff0f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Floating girly-pop stickers */
+.float {
+  position: absolute;
+  animation: floatUp 10s linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 0.8; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.card {
+  background: white;
+  padding: 40px 34px;
+  border-radius: 28px;
+  width: 92%;
+  max-width: 540px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+  z-index: 2;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.7;
+}
+
+h2 {
+  color: #ff4f7b;
+}
+
+button {
+  margin-top: 28px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff4f7b;
+  color: white;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+}
+
+.buttons {
+  margin-top: 35px;
+  position: relative;
+  height: 160px;
+}
+
+.yes {
+  box-shadow: 0 0 22px rgba(255,79,123,0.6);
+}
+
+.no {
+  position: absolute;
+  background: #ddd;
+  color: #333;
+}
+
+/* Seedhe Maut ending */
+.final {
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating stickers -->
+<script>
+const items = ["🐹","🌸","🐥","💐","🎀","🤍","🐦","✨"];
+for (let i = 0; i < 30; i++) {
+  const el = document.createElement("div");
+  el.className = "float";
+  el.innerHTML = items[Math.floor(Math.random()*items.length)];
+  el.style.left = Math.random() * 100 + "vw";
+  el.style.fontSize = Math.random() * 18 + 16 + "px";
+  el.style.animationDelay = Math.random() * 10 + "s";
+  document.body.appendChild(el);
+}
+</script>
+
+<!-- Music -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/2aN8r4zV9xE?autoplay=1&mute=1&loop=1&playlist=2aN8r4zV9xE"
+allow="autoplay"></iframe>
+
+<!-- PAGE 1 -->
+<div class="card" id="p1">
+  <p>
+    So Ananya,<br><br>
+    I want to ask you something big and serious —<br>
+    something serious at par with your favourite momos,<br>
+    kebabs, chicken bhaat, your favourite kurtis,<br>
+    and honestly… everything that you love.<br><br>
+    So listen, and think carefully, my grace 🤍
+  </p>
+  <button onclick="go2()">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card" id="p2" style="display:none;">
+  <p>
+    I’ve wanted to ask you this question confidently —<br>
+    on the night we met, with all the fairytale things<br>
+    going on in the background.<br><br>
+    Ever since we’ve been together, it crosses my mind<br>
+    that I should’ve asked you out boldly,<br>
+    like a prince —<br>
+    and not fumbled in front of your world-alluring beauty.<br><br>
+    So I’ll do that now.
+  </p>
+  <button onclick="go3()">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card" id="p3" style="display:none;">
+  <h2>
+    Will you be my Valentine,<br>
+    the ever-bewitching<br>
+    Princess of the Chelmsford? 👑🤍
+  </h2>
+
+  <p style="font-size:16px;">
+    (A “No” will be hard to catch for me,<br>
+    but please do try catching No once.)
+  </p>
+
+  <div class="buttons">
+    <button class="yes" onclick="yes()">Yes 🤍</button>
+    <button class="no" id="no">No</button>
+  </div>
+</div>
+
+<script>
+function go2(){ p1.style.display="none"; p2.style.display="block"; }
+function go3(){ p2.style.display="none"; p3.style.display="block"; }
+
+const noBtn = document.getElementById("no");
+noBtn.addEventListener("mouseover", ()=>{
+  noBtn.style.left = Math.random()*260 + "px";
+  noBtn.style.top = Math.random()*110 + "px";
+});
+
+function yes(){
+  document.body.innerHTML = `
+  <div style="
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff5f8a,#ff94b8);
+    font-family:'Segoe UI',sans-serif;
+    text-align:center;
+    padding:30px;">
+    <div class="final">
+      🖤 Seedhe Maut 🖤<br><br>
+      “You made the right choice, bacha.<br>
+      We’re not worthy of you —<br>
+      only Arnav is.”<br><br>
+      🤍<br>
+      Happy Valentine’s Day.
+    </div>
+  </div>`;
+}
+</script>
+
+</body>
+</html>
