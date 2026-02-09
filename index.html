@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-/* ===== CENTER WRAPPER ===== */
+/* ===== CENTER AREA ===== */
 #main {
   position: fixed;
   inset: 0;
@@ -53,7 +53,7 @@ h2 {
 
 /* ===== BUTTONS ===== */
 button {
-  margin-top: 28px;
+  margin-top: 26px;
   padding: 14px 32px;
   border-radius: 30px;
   border: none;
@@ -71,7 +71,7 @@ button:hover {
 .buttons {
   position: relative;
   height: 140px;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .yes {
@@ -98,31 +98,35 @@ button:hover {
   100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* ===== MUSIC UI ===== */
+/* ===== MUSIC (BOTTOM-RIGHT) ===== */
 #musicBox {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   background: white;
-  padding: 12px 18px;
-  border-radius: 24px;
+  padding: 10px 14px;
+  border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  font-size: 14px;
+  font-size: 13px;
   z-index: 20;
   text-align: center;
+}
+
+#musicBox button {
+  margin-top: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
 }
 
 #playerWrap {
   display: none;
   position: fixed;
   bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 20px;
   z-index: 20;
 }
 
-/* ===== FINAL SCREEN ===== */
+/* ===== FINAL ===== */
 .final {
   font-size: 20px;
   color: white;
@@ -168,9 +172,9 @@ for (let i = 0; i < 28; i++) {
     <p>
       I’ve wanted to ask you this confidently —<br>
       on the night we met, with all the fairytale things around us.<br><br>
-      Ever since, it feels like I should’ve asked you boldly,<br>
-      like a prince —<br>
-      and not fumbled in front of your world-alluring beauty.<br><br>
+      Ever since then, I feel like I should’ve asked you boldly,<br>
+      like a prince — and not fumbled in front of<br>
+      your world-alluring beauty.<br><br>
       So I’ll do that now.
     </p>
     <button onclick="go3()">Next</button>
@@ -197,14 +201,16 @@ for (let i = 0; i < 28; i++) {
 
 </div>
 
-<!-- MUSIC -->
+<!-- MUSIC UI -->
 <div id="musicBox">
-  🎵 Me & You – Parekh & Singh<br>
-  <button onclick="playMusic()">Tap to play ▶️</button>
+  🎵 Me & You<br>
+  <button onclick="playMusic()">Play ▶️</button>
 </div>
 
 <div id="playerWrap">
-  <iframe width="300" height="170"
+  <iframe
+    width="260"
+    height="150"
     src=""
     allow="autoplay; encrypted-media"
     style="border-radius:12px;">
@@ -223,9 +229,9 @@ function go3() {
 }
 
 document.getElementById("no").addEventListener("mouseover", () => {
-  const no = document.getElementById("no");
-  no.style.left = Math.random()*240 + "px";
-  no.style.top = Math.random()*100 + "px";
+  const n = document.getElementById("no");
+  n.style.left = Math.random()*220 + "px";
+  n.style.top = Math.random()*90 + "px";
 });
 
 function playMusic() {
@@ -259,6 +265,7 @@ function yes() {
 
 </body>
 </html>
+
 
 
 
